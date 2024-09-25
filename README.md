@@ -13,9 +13,9 @@ npm create vite@latest
 
 Done. Now run:
 
-  cd react-all-hooks
-  npm install
-  npm run dev
+  1.cd react-all-hooks
+  2.npm install
+  3.npm run dev
 
 All hooks in react
 -----------------------------------------------------------------------------------------------------------
