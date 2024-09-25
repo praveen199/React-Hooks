@@ -7,6 +7,7 @@ https://medium.com/@miahossain8888/how-to-create-a-react-app-with-vite-571883b10
 Prerequisites
 -----------------------------------------------------------------------------------------------------------
 1.Node version ≥ 18.
+
 2.NPM version 8.
 
 npm create vite@latest
@@ -14,18 +15,27 @@ npm create vite@latest
 Done. Now run:
 
   1.cd react-all-hooks
+  
   2.npm install
+  
   3.npm run dev
 
 All hooks in react
 -----------------------------------------------------------------------------------------------------------
 1.useState
-2.useEffet
+
+2.useEffect
+
 3.useRef
+
 4.useMemo
+
 5.useCallBack
+
 6.useContext
+
 7.useReducer
+
 8.useLayoutEffect
 
 1.useState
