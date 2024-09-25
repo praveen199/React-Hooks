@@ -432,5 +432,47 @@ const Header = () => {
 
 export default Header
 
+so mocking Header.jsx to render each time we have to use useCallback hook
 
+
+5.2 - Render header component one time
+----------------------------------------------------------------
+App.jsx
+----------------------------------------------------------------
+import { useCallback, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Header from './components/Header'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  const newFn = useCallback(() => {}, [])
+
+  return (
+    <>
+      <Header newFn={newFn} />
+      <h1>{count}</h1>
+      <button onClick={() => setCount(prev => prev + 1)}>Click Here</button>
+    </>
+  )
+}
+
+export default App
+
+Header.jsx
+----------------------------------------------------------------
+import React from 'react'
+
+const Header = () => {
+    console.log("Header rendered..")
+    return (
+        <div>
+            <h2>Header</h2>
+        </div>
+    )
+}
+
+export default React.memo(Header)
 
