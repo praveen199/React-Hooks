@@ -43,3 +43,27 @@ All hooks in react
 useState is a react hook,which cretes an "state variable" which helps us to track state in components & update the user interface when state changes.
 
 
+1.1 - App.jsx : Single state
+-----------------------------------------------------------------------------------------------------------
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [color, setColor] = useState('Blue');
+
+  const changeColor = () => {
+    setColor('Red');
+  }
+
+  return (
+    <>
+      <h1>My favourite color is : {color}</h1>
+      <button onClick={changeColor}>Click Here</button>
+    </>
+  )
+}
+
+export default App
+
