@@ -632,3 +632,63 @@ const Footer = () => {
 }
 
 export default Footer
+
+6.4 - Pass multiple values into context
+----------------------------------------------------------------
+AppContext.jsx
+----------------------------------------------------------------
+import React, { createContext } from 'react'
+
+export const AppContext = createContext();
+
+const ContextProvider = (props) => {
+    const phone = "+1-994673673787";
+    const name = "Praveen Singh";
+    return (
+        <AppContext.Provider value={{phone, name}}>
+            {props.children}
+        </AppContext.Provider>
+    )
+}
+
+export default ContextProvider
+
+Contact.jsx
+----------------------------------------------------------------
+import React, { useContext } from 'react'
+import {AppContext} from '../context/AppContext'
+
+const Contact = () => {
+
+  const {phone, name} = useContext(AppContext)
+
+  return (
+    <div>
+      <h2>Contact</h2>
+      <h3>Phone : {phone}</h3>
+      <h3>Name : {name}</h3>
+    </div>
+  )
+}
+
+export default Contact
+
+Footer.jsx
+----------------------------------------------------------------
+import React, { useContext } from 'react'
+import {AppContext} from '../context/AppContext'
+
+const Footer = () => {
+
+const {phone,name} = useContext(AppContext)
+
+  return (
+    <div>
+      <h2>Footer</h2>
+      <h3>Phone : {phone}</h3>
+      <h3>Name : {name}</h3>
+    </div>
+  )
+}
+
+export default Footer
