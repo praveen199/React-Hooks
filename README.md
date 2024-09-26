@@ -520,3 +520,75 @@ createRoot(document.getElementById('root')).render(
   </ContextProvider>
 )
  
+now we need to use this context in our project
+
+6.2 - creating components
+----------------------------------------------------------------
+create a new folder components & create 3 jsx file.
+
+Contact.jsx
+----------------------------------------------------------------
+import React from 'react'
+
+const Contact = () => {
+  return (
+    <div>
+      <h2>Contact</h2>
+    </div>
+  )
+}
+
+export default Contact
+
+Footer.jsx
+---------------------------------------------------------------
+import React from 'react'
+
+const Footer = () => {
+  return (
+    <div>
+      <h2>Footer</h2>
+    </div>
+  )
+}
+
+export default Footer
+
+Profile.jsx
+---------------------------------------------------------------
+import React from 'react'
+import Contact from './Contact'
+
+const Profile = () => {
+  return (
+    <div>
+      <h2>Profile</h2>
+      <Contact/>
+    </div>
+  )
+}
+
+export default Profile
+
+App.jsx
+---------------------------------------------------------------
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Profile from './components/Profile'
+import Footer from './components/Footer'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <Profile/>
+      <Footer/>
+    </>
+  )
+}
+
+export default App
+
