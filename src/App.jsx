@@ -1,35 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    console.log("Message form useEffect")
+  },[])// It will diaplay 3rd
+
+  useLayoutEffect(() => {
+    console.log("Message form useLayoutEffect")
+  },[])// It will diaplay 1st
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* It will diaplay 2nd */}
+      <h2>Test Message</h2>
+      {Array(40000).fill('').map((item, index) => (
+        <li key = {index}>{Math.pow(Math.random(),10)}</li>
+      ))}
     </>
   )
 }
 
 export default App
+
+//useLayoutEffect called before mouting element & useEffect called after mounting element
